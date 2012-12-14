@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+  <title>Touch Game Controller Demo</title>
+  <style type="text/css">
+    .red {
+    	  background-color: red;
+    }
+  </style>
+  <script type="text/javascript" src="touch-game-controller.js"></script>
+  <script type="text/javascript">
+    const SHOW_TIME = 100;
+    var touchGameController = new TouchGameController(document);
+
+    document.addEventListener('touchmoveup', function() {
+      document.getElementById('up').classList.add('red');
+      setTimeout(function() {
+        document.getElementById('up').classList.remove('red');
+      }, SHOW_TIME);
+    }, false);
+    
+    document.addEventListener('touchmovedown', function() {
+      document.getElementById('down').classList.add('red');
+      setTimeout(function() {
+        document.getElementById('down').classList.remove('red');
+      }, SHOW_TIME);
+    }, false);    
+     
+    document.addEventListener('touchmoveleft', function() {
+      document.getElementById('left').classList.add('red');
+      setTimeout(function() {
+        document.getElementById('left').classList.remove('red');
+      }, SHOW_TIME);
+    }, false);
+    
+    document.addEventListener('touchmoveright', function() {
+      document.getElementById('right').classList.add('red');
+      setTimeout(function() {
+        document.getElementById('right').classList.remove('red');
+      }, SHOW_TIME);
+    }, false);
+    
+    document.addEventListener('click', function() {
+      document.getElementById('click').classList.add('red');
+      setTimeout(function() {
+        document.getElementById('click').classList.remove('red');
+      }, SHOW_TIME);
+    }, false);    
+  </script>
+</head>
+<body>
+  <div id="up">up</div>
+  <div id="down">down</div>
+  <div id="left">left</div>
+  <div id="right">right</div>
+  <div id="click">click</div>
+</body>
+</html>
